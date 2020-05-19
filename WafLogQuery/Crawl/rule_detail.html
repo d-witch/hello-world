@@ -1,0 +1,107 @@
+<html>
+
+
+	
+		<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="pragma" content="no-cache" /> 
+        <style type="text/css" media="all">
+@import "/stylesheet/nsfocus_2012/link.css";
+@import "/stylesheet/nsfocus_2012/table.css";
+@import "/stylesheet/nsfocus_2012/tab.css";
+@import "/stylesheet/nsfocus_2012/form.css";
+@import "/stylesheet/nsfocus_2012/msg.css";
+@import "/stylesheet/nsfocus_2012/page.css";
+@import "/stylesheet/nsfocus_2012/pane.css";
+</style>
+<script type="text/javascript" src="/js/prototype.js"></script>			
+<script type="text/javascript" src="/js/loader.js?load=cavy,dialog,form,ui,frameset,html,validator,iputils,common"></script>
+			<script type="text/javascript" src="/js/md5.js"></script>
+			<script type="text/javascript">
+				function insertScriptGA(ids){
+					for(var i=0;i<ids.length;i++){
+						var id = ids[i].id;
+						var src = ids[i].src;
+
+						var pageUrlHash = '';
+						if(id == 'gascript' && typeof md5 == 'function'){
+							pageUrlHash = md5(window.location);
+							src+=pageUrlHash;
+						}
+						
+						if('1' != '1'){
+							src+='?type=test';
+						}
+
+						if(!document.getElementById(id)){
+							var gascript = document.createElement('script');
+							gascript.async=1;
+							gascript.id=id;
+							gascript.src=src;
+							document.body.appendChild(gascript);
+						}
+					}
+				}
+		
+				if(typeof UI != 'undefined' && UI.EA){
+					UI.EA(window,'load',function(){
+						insertScriptGA([{id:'gascript',src:'https://ux.api.nsfocus.com/GA.php/016bc515f38a741814e9aefac767e202/'}])
+					})
+				}
+			</script>		<script src="/js/jquery/jquery.js" type="text/javascript"></script>
+		<script src="/js/datepicker/WdatePicker.js" type="text/javascript"></script>
+		<script src="/js/dateutil.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$j = jQuery.noConflict(); // Use $j or jQuery in your code.
+		</script><script type="text/javascript">
+$j(function(){
+	  new Ajax.Form('modifyForm', {onSuccess : function(ctx){
+		  top.dialog.hide();
+		  window.parent.frames[0].frames[0].document.location.reload();
+	  }});
+});
+</script>
+</head>
+<body class="dialog">
+<div class="content">
+<div class="wrap">
+<div class="cont">
+<form class="cmn_form" id="modifyForm" action="/security/manageRule/modifyParams" method="post" name="modifyForm">
+<input type="hidden" name="id" value="27004935">
+
+
+<table class="cmn_table plumb">
+	<tr class="even">
+		<th rowspan="5" width="25%">规则概述</th>
+		<td width="30%">规则名称</td><td width="45%">jira_api_enum_user</td>
+	</tr>
+	<tr><td width="20%">规则ID</td><td width="90%">27004935</td></tr>
+	<tr><td width="20%">告警类型</td><td width="90%">Web_Plugin_Bug</td></tr>
+	<tr><td width="20%">危险等级</td><td width="90%">
+		<img  title="中" src="/stylesheet/nsfocus_2012/images/icon/d_middle.gif"/>
+	</td></tr>
+	<tr><td width="20%">准确度</td><td width="90%">
+		<img  title="高" src="/stylesheet/nsfocus_2012/images/icon/d_high.gif"/>
+	</td>
+	</tr>	
+	<tr class="even">
+				<th rowspan="4">影响范围</th><td >操作系统</td><td>所有操作系统</td>
+	</tr>
+	<tr><td >WEB服务器</td><td>Others  </td></tr>
+	<tr><td >数据库</td><td>所有数据库</td></tr>
+	<tr><td >编程语言</td><td>所有系统语言</td></tr>	
+	
+	<tr class="even">
+		<th>详细说明</th><td colspan="2">CVE编号: CVE-2019-8449<br>规则说明: 在Jira 8.4.0之前的版本，/rest/api/latest/groupuserpicker接口允许远程攻击者枚举用户名。<br>配置建议: 建议使用Jira的用户配置此项</td>
+	</tr>
+		
+</table>
+
+</form></div></div></div>
+<div class="button">
+<input class="cmn_btn but_width" type="button" value="关闭" onclick="if(top.reDialog && top.reDialog.__display) {top.reDialog.hide();return};top.dialog.hide();">
+</div>
+<div id="statusInformation" style="display:none;"><img src='/stylesheet/nsfocus_2009/images/loading.gif' /> 数据加载中,请稍候...</div>
+<div id="responseMessage" style="display:none;"><!--返回提示信息--></div>
+</body>
+</html>
